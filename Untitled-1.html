@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #eef2f3;
+            padding: 40px;
+        }
+        h1 { color: darkblue; }
+        a {
+            display: inline-block;
+            margin: 15px;
+            padding: 12px 25px;
+            background: navy;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Management System</h1>
+    <p>Welcome to our online library!</p>
+
+    <a href="user.html">User Portal</a>
+    <a href="admin.html">Admin Portal</a>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Portal</title>
+</head>
+<body>
+    <h1>Available Books</h1>
+
+    <ul id="books">
+        <li>Python Programming</li>
+        <li>Data Structures</li>
+        <li>Operating Systems</li>
+    </ul>
+
+    <a href="index.html">Home</a>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Portal</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <input type="text" id="book" placeholder="Enter book name">
+    <button onclick="addBook()">Add Book</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        function addBook() {
+            let book = document.getElementById("book").value;
+
+            if (book.trim() !== "") {
+                let li = document.createElement("li");
+                li.textContent = book;
+                document.getElementById("list").appendChild(li);
+                document.getElementById("book").value = "";
+            }
+        }
+    </script>
+
+    <a href="index.html">Home</a>
+</body>
+</html>
